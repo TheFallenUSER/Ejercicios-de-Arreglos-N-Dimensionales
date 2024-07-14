@@ -1,6 +1,16 @@
 #include <iostream>
 using namespace std;
 
+void escrituraMatriz(int matriz[][3],int filas,int columnas){
+	for(int i=0;i<filas;i++){
+		for(int j=0;j<columnas;j++){
+			cout<<"Ingrese Elemento["<<i<<"]["<<j<<"]: ";
+			cin>>matriz[i][j];
+		}
+	}
+	cout<<endl;
+}
+
 void multiplicaMatrices(int matriz1[][3],int matriz2[][3],int matriz3[][3],int filas,int columnas){
 	for(int i=0;i<filas;i++){
 		for(int j=0;j<columnas;j++){
@@ -31,17 +41,11 @@ void mostrarMatriz(int matriz1[][3],int matriz2[][3],int matriz3[][3],int filas,
 }
 
 int main(){
-	int multiplicacion[3][3];
-	int matriz1[3][3]={
-		{1,2,3},
-		{4,5,6},
-		{7,8,9}
-	};
-	int matriz2[3][3]{
-		{9,8,7},
-		{6,5,4},
-		{3,2,1}		
-	};
+	int multiplicacion[3][3],matriz1[3][3],matriz2[3][3];
+	cout<<"Ingrese los datos de la Matriz A:"<<endl;
+	escrituraMatriz(matriz1,3,3);
+	cout<<"Ingrese los datos de la Matriz B:"<<endl;
+	escrituraMatriz(matriz2,3,3);
 	multiplicaMatrices(matriz1,matriz2,multiplicacion,3,3);
 	mostrarMatriz(matriz1,matriz2,multiplicacion,3,3);
 	return 0;
